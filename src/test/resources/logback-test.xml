@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d %p [%c] - %m%n</Pattern>
+        </layout>
+    </appender>
+
+    <logger name="org.hibernate">
+        <level value="TRACE" />
+    </logger>
+    
+    <logger name="org.unitils">
+        <level value="TRACE" />
+    </logger>
+
+    <root level="TRACE">
+        <appender-ref ref="stdout" />
+    </root>
+</configuration>

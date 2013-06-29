@@ -1,6 +1,4 @@
-wsim-xp-example
+xsoa-example
 ===============
 
-Sample implementation of a web service according to WSIM-XP (http://www.fwsi.org/resources/fwsi-im-0[1][1].0-xpcaseexample-doc-wd-03.pdf) method.
-
-TODO: servlet context listener that persists test data!
+Sample implementation of a web service according to XSOA method proposed for SBCARS 2013.

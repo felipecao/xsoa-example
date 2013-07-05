@@ -52,3 +52,9 @@ Acceptance Criteria
   Scenario: response size validation  
     When "admin" user requests his sites  
     Then response size is not larger than "500"KB  
+
+BENEFITS
+========
+1. Acceptance criteria are automated and guaranteed by tests suite
+2. If response size exceeds threshold instant feedback is provided by tests
+3. Errors are not left for a separate phase, product is deployed with all features tested

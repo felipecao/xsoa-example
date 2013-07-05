@@ -3,7 +3,7 @@
 <dataset>
 
     <USER USER_ID = "1" USER_LOGIN = "admin" USER_PWD="admin" />
-    <USER USER_ID = "2" USER_LOGIN = "backup-user" USER_PWD="bkp" />
+    <USER USER_ID = "2" USER_LOGIN = "backup" USER_PWD="bkp" />
 
     <SITE SITE_ID="1" SITE_NAME="CENTRAL SITE" />
     <SITE SITE_ID="2" SITE_NAME="BACKUP SITE" />

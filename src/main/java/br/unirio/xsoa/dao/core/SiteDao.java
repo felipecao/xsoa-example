@@ -4,6 +4,7 @@ import br.unirio.xsoa.dao.ISiteDao;
 import br.unirio.xsoa.entity.Site;
 import br.unirio.xsoa.entity.User;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -37,6 +38,7 @@ public class SiteDao implements ISiteDao {
         Set<Site> sites = new LinkedHashSet<Site>(sessionFactory.getCurrentSession().createCriteria(Site.class)
                 .createAlias("users", "usr")
                 .add(Restrictions.eq("usr.login", user.getLogin()))
+                .addOrder(Order.asc("name"))
                 .list());
 
         return sites;

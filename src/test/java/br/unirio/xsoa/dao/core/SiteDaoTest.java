@@ -44,7 +44,7 @@ public class SiteDaoTest extends UnitilsJUnit4 {
         List<Scenario> scenarios = new ArrayList<Scenario>(sitesAsList.get(0).getScenarios());
 
         assertEquals(2, scenarios.size());
-        assertEquals(4, sitesAsList.get(0).getActivities().size());
+        assertEquals(2, sitesAsList.get(0).getActivities().size());
         assertEquals(2, sitesAsList.get(0).getScenarios().size());
         assertEquals(2, scenarios.get(0).getValues().size());
         assertEquals(3, scenarios.get(1).getValues().size());
@@ -52,7 +52,7 @@ public class SiteDaoTest extends UnitilsJUnit4 {
         scenarios = new ArrayList<Scenario>(sitesAsList.get(1).getScenarios());
 
         assertEquals(2, scenarios.size());
-        assertEquals(2, sitesAsList.get(1).getActivities().size());
+        assertEquals(4, sitesAsList.get(1).getActivities().size());
         assertEquals(2, sitesAsList.get(1).getScenarios().size());
         assertEquals(2, scenarios.get(0).getValues().size());
         assertEquals(3, scenarios.get(1).getValues().size());

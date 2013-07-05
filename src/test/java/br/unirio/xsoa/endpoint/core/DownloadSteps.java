@@ -29,8 +29,8 @@ public class DownloadSteps {
 
     @When("^\"([^\"]*)\" user requests the download of his sites$")
     public void user_requests_the_download_of_his_sites(String userName) throws Throwable {
-        DownloadResponse response = endpoint.download(new DownloadRequest(userName));
-        sites = response.sites;
+        DownloadResponse response = endpoint.downloadSites(new DownloadRequest(userName));
+        sites = response.getSites();
     }
 
     @Then("^\"([^\"]*)\" sites are downloaded, namely \"([^\"]*)\" and \"([^\"]*)\", in this order$")
@@ -38,6 +38,12 @@ public class DownloadSteps {
         assertEquals(totalSites, sites.length);
         assertEquals(sites[0].getName(), firstSiteName);
         assertEquals(sites[1].getName(), secondSiteName);
+    }
+
+    @Then("^\"([^\"]*)\" site is downloaded, namely \"([^\"]*)\"$")
+    public void site_is_downloaded_namely(int totalSites, String siteName) throws Throwable {
+        assertEquals(totalSites, sites.length);
+        assertEquals(sites[0].getName(), siteName);
     }
 
     @Then("^\"([^\"]*)\" has \"([^\"]*)\" activities$")
@@ -64,8 +70,17 @@ public class DownloadSteps {
 
     @Then("^\"([^\"]*)\" activities are \"([^\"]*)\" and \"([^\"]*)\" in this order$")
     public void activities_are_and_in_this_order(String siteName, String activity1, String activity2) throws Throwable {
-        assertEquals(sites[1].getName(), siteName);
-        assertEquals(sites[1].getActivities()[0].getName(), activity1);
-        assertEquals(sites[1].getActivities()[1].getName(), activity2);
+
+        SiteWSO site = null;
+
+        for(SiteWSO s: sites){
+            if(siteName.equals(s.getName())){
+                site = s;
+            }
+        }
+
+        assertEquals(site.getName(), siteName);
+        assertEquals(site.getActivities()[0].getName(), activity1);
+        assertEquals(site.getActivities()[1].getName(), activity2);
     }
 }

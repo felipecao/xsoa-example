@@ -6,8 +6,12 @@ import br.unirio.xsoa.entity.Site;
 import br.unirio.xsoa.entity.User;
 import br.unirio.xsoa.service.ISiteService;
 import br.unirio.xsoa.spring.BeanRetriever;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.Resource;
+import javax.jws.WebMethod;
+import javax.jws.WebParam;
+import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.servlet.ServletContext;
 import javax.xml.ws.WebServiceContext;
@@ -19,12 +23,20 @@ public class SmartBrickEndpoint implements ISmartBrickEndpoint {
     @Resource
     private WebServiceContext context;
 
-    @Resource
-    private ISiteService siteService; // injected only during tests.
-    // At runtime, JAX-WS endpoints don't have access to Spring context
+    private ISiteService siteService;
+
+    public SmartBrickEndpoint() {
+    }
+
+    @Autowired
+    public SmartBrickEndpoint(ISiteService siteService) {
+        this.siteService = siteService; // injected only during tests.
+        // At runtime, JAX-WS endpoints don't have access to Spring context
+    }
 
     @Override
-    public DownloadResponse download(DownloadRequest r) {
+    @WebMethod
+    public @WebResult DownloadResponse downloadSites(@WebParam DownloadRequest r) {
         ISiteService siteService = getSiteService();
         Set<Site> sites = siteService.findByUser(new User(r.getUser()));
         return new DownloadResponse(convertFrom(sites));

@@ -10,7 +10,7 @@ import br.unirio.xsoa.endpoint.core.domain.SiteWSO;
  * To change this template use File | Settings | File Templates.
  */
 public class DownloadResponse {
-    SiteWSO[] sites;
+    private SiteWSO[] sites;
 
     public DownloadResponse(SiteWSO[] sites) {
         this.sites = sites;

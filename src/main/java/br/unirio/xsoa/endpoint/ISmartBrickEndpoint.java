@@ -12,5 +12,5 @@ import br.unirio.xsoa.endpoint.core.DownloadResponse;
  */
 public interface ISmartBrickEndpoint {
 
-    DownloadResponse download(DownloadRequest r);
+    DownloadResponse downloadSites(DownloadRequest r);
 }

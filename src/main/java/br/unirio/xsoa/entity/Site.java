@@ -27,6 +27,7 @@ public class Site {
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "SITE_ACTIVITY", joinColumns = { @JoinColumn(name = "SITE_ID") },
             inverseJoinColumns = { @JoinColumn(name = "ACTIVITY_ID") })
+    @OrderBy("name")
     private Set<Activity> activities = new HashSet<Activity>();
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)

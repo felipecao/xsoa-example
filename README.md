@@ -1,7 +1,7 @@
 xsoa-example
 =============
 
-This project is a sample implementation of a web service according to XSOA method proposed for SBCARS 2013.
+This project is a sample implementation of services according to the proposal depicted in "A Method for Service Agile Construction" article, submitted to SBSI 2014 by Felipe Carvalho, Leonardo Guerreiro Azevedo and Gleison Santos.
 
 Scenario
 --------

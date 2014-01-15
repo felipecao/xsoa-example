@@ -21,6 +21,12 @@ app and server (for either upload or downloading data) cannot exceed 500 KB.
 
 Acceptance Criteria
 -------------------
+- admin users can download any sites information.
+- non-admin users can only download sites they have been assigned to.
+- messages size cannot exceed 500 KB.
+
+Acceptance Tests
+-------------------
 
 ### Feature: Sites download  
   

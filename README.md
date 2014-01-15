@@ -53,7 +53,7 @@ Acceptance Tests
     And "BACKUP SITE" activities are "CLEAN" and "NAIL" in this order  
   
   
-### Feature: Non-functional requirements  
+### Feature: Sites download (non-functional requirements)
   
   Scenario: response size validation  
     When "admin" user requests his sites  

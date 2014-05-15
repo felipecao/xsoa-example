@@ -46,7 +46,7 @@ public class DownloadSteps {
         assertEquals(sites[0].getName(), siteName);
     }
 
-    @Then("^\"([^\"]*)\" has \"([^\"]*)\" activities$")
+    @Then("^\"([^\"]*)\" has been configured with \"([^\"]*)\" activities$")
     public void has_activities(String siteName, int totalExpectedActivites) throws Throwable {
         for(SiteWSO s: sites){
             if(siteName.equals(s.getName())){
@@ -68,7 +68,7 @@ public class DownloadSteps {
         fail();
     }
 
-    @Then("^\"([^\"]*)\" activities are \"([^\"]*)\" and \"([^\"]*)\" in this order$")
+    @Then("^\"([^\"]*)\" activities are called \"([^\"]*)\" and \"([^\"]*)\" in this order$")
     public void activities_are_and_in_this_order(String siteName, String activity1, String activity2) throws Throwable {
 
         SiteWSO site = null;

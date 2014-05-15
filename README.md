@@ -6,20 +6,25 @@ This project is a sample implementation of services according to the proposal de
 Scenario
 --------
 
-SmartBrick company has developed a product to assess a construction site productivity according to the productive
-hours or workers when working on a building, house or any other civil engineering activity.
+SmartBrick company has developed a product to assess a construction site's productivity according to the productive
+hours of workers when working on a building, house or any other civil engineering activity.
 
-This product is made of a mobile app that allows any smartphone to act as a PDA, enabling a field technician to register
-the activities performed by workers in a given site along the day. Later, this information will be uploaded to a database,
-enabling data analysts to extract productivity indices from those.
+This product is made of a mobile app that allows any smartphone to act as a PDA, enabling a field inspector to track and register
+the activities performed by workers in a given construction site along the day. Later, this information will be uploaded to a database,
+enabling data analysts to extract productivity indices from that data.
 
 The information available for users to download is based on roles. Admin users are able to register activities for
-any site. Other users are only able to see information regarding the sites they were assigned to.
+any site. Other users are only able to log information regarding the sites they were assigned to.
 
-An important non-function restriction is that, due to performance and bandwith constraints, any message exchanged between
+An important non-functional restriction is that, due to performance and bandwith constraints, any message exchanged between
 app and server (for either upload or downloading data) cannot exceed 500 KB.
 
-Acceptance Criteria
+User Stories
+------------
+1- A user should be able to download the configurations of the construction sites assigned to her
+2- A user should be able to upload the data collected along the day
+
+Acceptance Criteria for Story #1
 -------------------
 - admin users can download any sites information.
 - non-admin users can only download sites they have been assigned to.
@@ -31,8 +36,8 @@ Acceptance Tests
 ### Feature: Sites download  
   
   AS admin user  
-  I WANT to download the sites assigned to me  
-  SO THAT I'm able to assess the work produced in those sites  
+  I WANT to download the configuration of the construction sites assigned to me
+  SO THAT I'm able to track the work produced in those sites
 
   Scenario: admin user is able to assess two sites  
     Given two sites, both assigned to admin user and one of them assigned to backup user  
